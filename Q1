@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Question 1</title>
+  <style>
+    body{
+      background:url('bg2.jpg') center/cover no-repeat;
+      height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-family:sans-serif;
+    }
+    .box{
+      background:rgba(255,255,255,0.9);
+      padding:25px;
+      border-radius:20px;
+      width:90%;
+      max-width:400px;
+    }
+    button{
+      margin-top:15px;
+      padding:10px;
+      width:100%;
+      border:none;
+      border-radius:20px;
+      background:#ff4d6d;
+      color:white;
+      font-size:16px;
+    }
+  </style>
+
+  <script>
+    function check(answer){
+      if(answer==='correct'){
+        location.href='q2.html';
+      } else {
+        alert('❌ தவறான பதில் 😘 மீண்டும் முயற்சி செய்யுங்கள்');
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <div class="box">
+    <h3>3️⃣ கேள்வி:</h3>
+    <p><strong>என் பிறந்த நாள் எது?</strong></p>
+
+    <button onclick="check('wrong')">19.11.2020</button>
+    <button onclick="check('correct')">28.04.1995</button>
+    <button onclick="check('wrong')">15.11.2023</button>
+    <button onclick="check('wrong')">02.12.2025</button>
+  </div>
+</body>
+</html>
