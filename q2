@@ -10,3 +10,4 @@ function check(a){
 <button onclick="check('wrong')">19.11.2020</button>
 <button onclick="check('correct')">02.12.2025</button>
 <button onclick="check('wrong')">28.04.1995</button>
+<button onclick="location.href='q1.html'">Start Quiz 💕</button>
