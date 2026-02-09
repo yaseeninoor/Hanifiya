@@ -51,5 +51,6 @@
     <button onclick="check('wrong')">15.11.2023</button>
     <button onclick="check('wrong')">02.12.2025</button>
   </div>
+<button onclick="location.href='q2.html'">Start Quiz 💕</button>
 </body>
 </html>
