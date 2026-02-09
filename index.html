@@ -1,92 +1,37 @@
-<hr style="margin:40px 0;">
-
-<h2 style="text-align:center;color:#e63946;">
-❤️ காதல் & குடும்ப Quiz ❤️<br>
-<span style="font-size:16px;">(One Right Answer)</span>
-</h2>
-
-<!-- QUESTION 3 -->
-<div class="quiz">
-  <p><strong>3️⃣ கேள்வி: என் பிறந்த நாள் எது?</strong></p>
-  <label><input type="radio" name="q3" value="wrong"> A) 19.11.2020</label><br>
-  <label><input type="radio" name="q3" value="correct"> B) 28.04.1995</label><br>
-  <label><input type="radio" name="q3" value="wrong"> C) 15.11.2023</label><br>
-  <label><input type="radio" name="q3" value="wrong"> D) 02.12.2025</label><br>
-  <button onclick="checkAnswer('q3','result3')">Submit</button>
-  <p id="result3"></p>
-</div>
-
-<!-- QUESTION 4 -->
-<div class="quiz">
-  <p><strong>4️⃣ கேள்வி: எங்கள் இரண்டாவது குழந்தையின் பிறந்த நாள் எது?</strong></p>
-  <label><input type="radio" name="q4" value="wrong"> A) 15.11.2023</label><br>
-  <label><input type="radio" name="q4" value="wrong"> B) 19.11.2020</label><br>
-  <label><input type="radio" name="q4" value="correct"> C) 02.12.2025</label><br>
-  <label><input type="radio" name="q4" value="wrong"> D) 28.04.1995</label><br>
-  <button onclick="checkAnswer('q4','result4')">Submit</button>
-  <p id="result4"></p>
-</div>
-
-<!-- QUESTION 5 -->
-<div class="quiz">
-  <p><strong>5️⃣ கேள்வி: எங்கள் குடும்பத்தில் மிகச் சிறப்பு வாய்ந்த முதல் விழா எது?</strong></p>
-  <label><input type="radio" name="q5" value="wrong"> A) முதல் குழந்தை பிறந்த நாள்</label><br>
-  <label><input type="radio" name="q5" value="wrong"> B) இரண்டாவது குழந்தை பிறந்த நாள்</label><br>
-  <label><input type="radio" name="q5" value="correct"> C) திருமண நாள்</label><br>
-  <label><input type="radio" name="q5" value="wrong"> D) பிறந்த நாள்</label><br>
-  <button onclick="checkAnswer('q5','result5')">Submit</button>
-  <p id="result5"></p>
-</div>
-
-<!-- QUESTION 6 -->
-<div class="quiz">
-  <p><strong>6️⃣ கேள்வி: எங்கள் வாழ்க்கையை முழுமையாக்கும் மிகப் பெரிய செல்வம் யார்?</strong></p>
-  <label><input type="radio" name="q6" value="wrong"> A) பணம்</label><br>
-  <label><input type="radio" name="q6" value="wrong"> B) வீடு</label><br>
-  <label><input type="radio" name="q6" value="correct"> C) எங்கள் குழந்தைகள்</label><br>
-  <label><input type="radio" name="q6" value="wrong"> D) வேலை</label><br>
-  <button onclick="checkAnswer('q6','result6')">Submit</button>
-  <p id="result6"></p>
-</div>
-
-<style>
-  .quiz {
-    background:#fff0f3;
-    padding:15px;
-    border-radius:15px;
-    margin:20px 0;
-  }
-  .quiz button {
-    margin-top:10px;
-    background:#ff4d6d;
-    color:white;
-    border:none;
-    padding:8px 16px;
-    border-radius:20px;
-    font-size:15px;
-  }
-</style>
-
-<script>
-function checkAnswer(questionName, resultId) {
-  const options = document.getElementsByName(questionName);
-  let selected = null;
-
-  for (let opt of options) {
-    if (opt.checked) {
-      selected = opt.value;
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Love Quiz ❤️</title>
+  <style>
+    body{
+      background:url('bg1.jpg') center/cover no-repeat;
+      height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-family:sans-serif;
     }
-  }
-
-  if (!selected) {
-    document.getElementById(resultId).innerHTML = "⚠️ தயவு செய்து ஒரு பதிலை தேர்வு செய்யுங்கள்";
-    return;
-  }
-
-  if (selected === "correct") {
-    document.getElementById(resultId).innerHTML = "✅ சரியான பதில் ❤️";
-  } else {
-    document.getElementById(resultId).innerHTML = "❌ தவறான பதில் 😘";
-  }
-}
-</script>
+    .box{
+      background:rgba(255,255,255,0.85);
+      padding:30px;
+      border-radius:20px;
+      text-align:center;
+    }
+    button{
+      padding:12px 25px;
+      font-size:18px;
+      border:none;
+      border-radius:25px;
+      background:#ff4d6d;
+      color:white;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>❤️ காதல் & குடும்ப Quiz ❤️</h1>
+    <p>ஒரு கேள்வி – ஒரு பக்கம் 📖</p>
+    <button onclick="location.href='q1.html'">Start Quiz 💕</button>
+  </div>
+</body>
+</html>
