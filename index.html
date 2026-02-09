@@ -1,125 +1,92 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>My Forever Love ❤️</title>
-  <style>
-    body {
-      margin: 0;
-      min-height: 100vh;
-      background: linear-gradient(135deg, #ff758c, #ff7eb3);
-      font-family: 'Segoe UI', sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
+<hr style="margin:40px 0;">
+
+<h2 style="text-align:center;color:#e63946;">
+❤️ காதல் & குடும்ப Quiz ❤️<br>
+<span style="font-size:16px;">(One Right Answer)</span>
+</h2>
+
+<!-- QUESTION 3 -->
+<div class="quiz">
+  <p><strong>3️⃣ கேள்வி: என் பிறந்த நாள் எது?</strong></p>
+  <label><input type="radio" name="q3" value="wrong"> A) 19.11.2020</label><br>
+  <label><input type="radio" name="q3" value="correct"> B) 28.04.1995</label><br>
+  <label><input type="radio" name="q3" value="wrong"> C) 15.11.2023</label><br>
+  <label><input type="radio" name="q3" value="wrong"> D) 02.12.2025</label><br>
+  <button onclick="checkAnswer('q3','result3')">Submit</button>
+  <p id="result3"></p>
+</div>
+
+<!-- QUESTION 4 -->
+<div class="quiz">
+  <p><strong>4️⃣ கேள்வி: எங்கள் இரண்டாவது குழந்தையின் பிறந்த நாள் எது?</strong></p>
+  <label><input type="radio" name="q4" value="wrong"> A) 15.11.2023</label><br>
+  <label><input type="radio" name="q4" value="wrong"> B) 19.11.2020</label><br>
+  <label><input type="radio" name="q4" value="correct"> C) 02.12.2025</label><br>
+  <label><input type="radio" name="q4" value="wrong"> D) 28.04.1995</label><br>
+  <button onclick="checkAnswer('q4','result4')">Submit</button>
+  <p id="result4"></p>
+</div>
+
+<!-- QUESTION 5 -->
+<div class="quiz">
+  <p><strong>5️⃣ கேள்வி: எங்கள் குடும்பத்தில் மிகச் சிறப்பு வாய்ந்த முதல் விழா எது?</strong></p>
+  <label><input type="radio" name="q5" value="wrong"> A) முதல் குழந்தை பிறந்த நாள்</label><br>
+  <label><input type="radio" name="q5" value="wrong"> B) இரண்டாவது குழந்தை பிறந்த நாள்</label><br>
+  <label><input type="radio" name="q5" value="correct"> C) திருமண நாள்</label><br>
+  <label><input type="radio" name="q5" value="wrong"> D) பிறந்த நாள்</label><br>
+  <button onclick="checkAnswer('q5','result5')">Submit</button>
+  <p id="result5"></p>
+</div>
+
+<!-- QUESTION 6 -->
+<div class="quiz">
+  <p><strong>6️⃣ கேள்வி: எங்கள் வாழ்க்கையை முழுமையாக்கும் மிகப் பெரிய செல்வம் யார்?</strong></p>
+  <label><input type="radio" name="q6" value="wrong"> A) பணம்</label><br>
+  <label><input type="radio" name="q6" value="wrong"> B) வீடு</label><br>
+  <label><input type="radio" name="q6" value="correct"> C) எங்கள் குழந்தைகள்</label><br>
+  <label><input type="radio" name="q6" value="wrong"> D) வேலை</label><br>
+  <button onclick="checkAnswer('q6','result6')">Submit</button>
+  <p id="result6"></p>
+</div>
+
+<style>
+  .quiz {
+    background:#fff0f3;
+    padding:15px;
+    border-radius:15px;
+    margin:20px 0;
+  }
+  .quiz button {
+    margin-top:10px;
+    background:#ff4d6d;
+    color:white;
+    border:none;
+    padding:8px 16px;
+    border-radius:20px;
+    font-size:15px;
+  }
+</style>
+
+<script>
+function checkAnswer(questionName, resultId) {
+  const options = document.getElementsByName(questionName);
+  let selected = null;
+
+  for (let opt of options) {
+    if (opt.checked) {
+      selected = opt.value;
     }
+  }
 
-    .container {
-      background: white;
-      border-radius: 20px;
-      padding: 30px;
-      max-width: 500px;
-      width: 100%;
-      text-align: center;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.25);
-      animation: fadeIn 2s ease;
-    }
+  if (!selected) {
+    document.getElementById(resultId).innerHTML = "⚠️ தயவு செய்து ஒரு பதிலை தேர்வு செய்யுங்கள்";
+    return;
+  }
 
-    h1 {
-      color: #e63946;
-    }
-
-    .heart {
-      font-size: 50px;
-      animation: beat 1s infinite;
-    }
-
-    /* Image Gallery */
-    .gallery {
-      display: flex;
-      gap: 10px;
-      margin: 20px 0;
-      overflow-x: auto;
-    }
-
-    .gallery img {
-      height: 140px;
-      border-radius: 15px;
-      object-fit: cover;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    }
-
-    /* Q&A Section */
-    .qa {
-      text-align: left;
-      margin-top: 20px;
-    }
-
-    .qa h2 {
-      text-align: center;
-      color: #ff4d6d;
-    }
-
-    .qa p {
-      background: #fff0f3;
-      padding: 10px 15px;
-      border-radius: 10px;
-      margin: 10px 0;
-    }
-
-    footer {
-      margin-top: 20px;
-      font-style: italic;
-      color: #777;
-    }
-
-    @keyframes beat {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.3); }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <div class="heart">💖</div>
-    <h1>Happy Valentine’s Day</h1>
-
-    <p>
-      My love, every moment with you is a memory I cherish forever.
-      You are not just my wife, you are my heart ❤️
-    </p>
-
-    <!-- 📸 PHOTO GALLERY -->
-    <div class="gallery">
-      <img src="photo1.jpg" alt="Our memory">
-      <img src="photo2.jpg" alt="Our love">
-      <img src="photo3.jpg" alt="Together forever">
-    </div>
-
-    <!-- 💬 QUESTION & ANSWER -->
-    <div class="qa">
-      <h2>Our Love Story 💕</h2>
-
-      <p><strong>Q:</strong> When did I fall in love with you?<br>
-         <strong>A:</strong> The moment you smiled at me 😊</p>
-
-      <p><strong>Q:</strong> What do I love most about you?<br>
-         <strong>A:</strong> Your heart, your kindness, and your love 💖</p>
-
-      <p><strong>Q:</strong> Will I love you forever?<br>
-         <strong>A:</strong> Always. Today. Tomorrow. Forever ❤️</p>
-    </div>
-
-    <footer>
-      Forever Yours,<br>
-      Your Loving Husband 💍
-    </footer>
-  </div>
-</body>
-</html>
+  if (selected === "correct") {
+    document.getElementById(resultId).innerHTML = "✅ சரியான பதில் ❤️";
+  } else {
+    document.getElementById(resultId).innerHTML = "❌ தவறான பதில் 😘";
+  }
+}
+</script>
