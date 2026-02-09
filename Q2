@@ -1,0 +1,12 @@
+<script>
+function check(a){
+  if(a==='correct'){ location.href='q3.html'; }
+  else{ alert('❌ தவறு 😘'); }
+}
+</script>
+
+<p><strong>எங்கள் இரண்டாவது குழந்தையின் பிறந்த நாள் எது?</strong></p>
+<button onclick="check('wrong')">15.11.2023</button>
+<button onclick="check('wrong')">19.11.2020</button>
+<button onclick="check('correct')">02.12.2025</button>
+<button onclick="check('wrong')">28.04.1995</button>
